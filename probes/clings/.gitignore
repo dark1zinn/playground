@@ -1,0 +1,6 @@
+build/
+.c-lings-state.txt
+__pycache__/
+
+todo.md
+.DS_Store
