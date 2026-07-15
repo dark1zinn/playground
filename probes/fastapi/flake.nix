@@ -39,6 +39,7 @@
                uv
                ruff
                python315
+               ty
             ];
 
             # Set any environment variables for your dev shell
