@@ -38,7 +38,6 @@
                self.formatter.${system}
                uv
                ruff
-               python315
                ty
             ];
 
