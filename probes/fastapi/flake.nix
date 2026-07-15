@@ -39,6 +39,7 @@
                uv
                ruff
                ty
+               gcc # Needed to compile some Rust/C Python packages used by FastApi and Pydantic
             ];
 
             # Set any environment variables for your dev shell
