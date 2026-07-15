@@ -37,6 +37,7 @@
             packages = with pkgs; [
                self.formatter.${system}
                gcc
+               clang-tools
                uv
             ];
 
