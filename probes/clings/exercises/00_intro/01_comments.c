@@ -8,7 +8,6 @@
 
 int main(void) {
     /* This is an outer comment
-       /* This nested comment will break things! */
        The compiler thinks the comment ended above.
     */
         printf("Comments fixed!\n");

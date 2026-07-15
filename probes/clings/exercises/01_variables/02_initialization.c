@@ -10,7 +10,7 @@
  */
 
 int main(void) {
-    int x;
+    int x = 42;
 
     check_int(x, 42);
 

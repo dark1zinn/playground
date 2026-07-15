@@ -11,7 +11,7 @@
  */
 
 int main(void) {
-    x = 42;
+    int x = 42;
 
     check_int(x, 42);
 

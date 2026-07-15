@@ -14,7 +14,7 @@ int main(void) {
     const int MAX_USERS = 100;
 
     // TODO: Fix the error below without changing the declaration of MAX_USERS
-    MAX_USERS = 200;
+    // MAX_USERS = 100;
 
     check_int(MAX_USERS, 100);
 
