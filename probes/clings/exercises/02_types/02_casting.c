@@ -13,7 +13,7 @@ int main(void) {
 
     /* TODO: Fix the integer division bug so that result is 2.5 */
     /* Hint: You can use the cast operator: (float)variable */
-    float result = a / b;
+    float result = (float)a / (float)b;
 
     check_float(result, 2.5f);
 

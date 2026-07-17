@@ -14,7 +14,7 @@ int main(void) {
     unsigned int u = 1;
 
     // TODO: Fix the comparison so -1 is considered less than 1.
-    int is_less = (s < u);
+    int is_less = (s < (short)u);
 
     check_int_msg(is_less, 1, "-1 should be less than 1 with a correct comparison");
 

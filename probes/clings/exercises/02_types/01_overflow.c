@@ -14,7 +14,7 @@
  */
 
 int main(void) {
-    unsigned char counter = 250;
+    int counter = 250;
 
     for (int i = 0; i < 10; i++) {
         counter++;
