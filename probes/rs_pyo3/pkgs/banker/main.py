@@ -1,20 +1,21 @@
 import typer
+import greet
 
 app = typer.Typer()
 
 @app.command()
 def hello():
-    print("Hello from banker!")
+    print(greet.greet("Banker"))
     exit(0)
 
 @app.command()
 def pay(person: str, amount: int):
-    print("You just paid " + str(amount) + " to " + str(person) + "!")
+    print(greet.pay(amount, person))
     exit(0)
 
 @app.command()
 def deposit(amount: int):
-    print("You just deposited $" + str(amount))
+    greet.deposit(amount)
     exit(0)
 
 if __name__ == "__main__":
