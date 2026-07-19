@@ -1,0 +1,10 @@
+alias b := build
+alias r := run
+
+build:
+    uv run nuitka --mode=onefile main.py
+
+# By default run development mode (eg main.py instead of main.bin)
+[arg('dev', short, value='n')]
+run dev='y' *args:
+    {{if dev == "y" { "uv run main.py " + args } else { "./main.bin " + args }}}
