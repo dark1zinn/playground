@@ -1,18 +1,29 @@
-import typer
+import click
 import greet
 import sys
 
-from ui import ClockApp
+from ui.tui import ClockApp
 
-app = typer.Typer(invoke_without_command=True)
+def cli():
+    click.echo("this is MAIN:")
+    click.echo(f"\n  argc: {len(sys.argv)}\n  argv: {sys.argv}")
 
-@app.callback()
+    # Inside an click.group function this would be unreachable code
+    # since if no args (argv<2) are passed click intercepts into a help output
+    # this means that when the function is run there would ALWAYS be more than 1 arg (argv>1)
+    if len(sys.argv)<2:
+        ClockApp().run() # Run TUI when no args are passed
+    else:
+        main()
+    sys.exit(1)
+
+@click.group()
 def main():
-    ClockApp().run()
+    pass
 
-@app.command()
+@main.command()
 def hello():
-    print(greet.greet("Banker"))
+    click.echo(greet.greet("Banker"))
     # Seems that to allow certain features some flags should be set
     # for the `exit()` function for example, seems to need `--no-deployment-flag=site-builtins`
     # ---
@@ -21,17 +32,20 @@ def hello():
     # it becomes an orphan fucntion (eg undefined function that doesn't exist at runtime)
     sys.exit(0)
 
-@app.command()
+@main.command()
+@click.argument('person')
+@click.argument('amount')
 def pay(person: str, amount: int):
     # The LSP may complain here since there are no signatures at all of this pay() function
     # So despite it is there and it works, the LSP doesn't know about it
-    print(greet.pay(amount, person))
+    click.echo(greet.pay(int(amount), person))
     sys.exit(0)
 
-@app.command()
+@main.command()
+@click.argument('amount')
 def deposit(amount: int):
-    greet.deposit(amount)
+    greet.deposit(int(amount))
     sys.exit(0)
 
 if __name__ == "__main__":
-    app()
+    cli()

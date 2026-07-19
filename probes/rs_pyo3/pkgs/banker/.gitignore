@@ -2,3 +2,4 @@ main.sh
 main.build/
 main.bin
 main.dist/
+*.egg-info/
