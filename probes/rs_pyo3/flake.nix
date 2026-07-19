@@ -64,6 +64,8 @@
               uv
               ruff
               ty
+              ccache
+              just
               self.formatter.${system}
             ];
 
