@@ -13,6 +13,7 @@ def cli():
     # this means that when the function is run there would ALWAYS be more than 1 arg (argv>1)
     if len(sys.argv)<2:
         ClockApp().run() # Run TUI when no args are passed
+        sys.exit(0)
     else:
         main()
     sys.exit(1)
