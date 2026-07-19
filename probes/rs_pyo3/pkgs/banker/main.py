@@ -1,7 +1,13 @@
 import typer
 import greet
 
-app = typer.Typer()
+from ui import ClockApp
+
+app = typer.Typer(invoke_without_command=True)
+
+@app.callback()
+def main():
+    ClockApp().run()
 
 @app.command()
 def hello():
