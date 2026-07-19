@@ -47,6 +47,12 @@ wheels = [
 [[package]]
 name = "greet"
 source = { editable = "pkgs/greet" }
+dependencies = [
+    { name = "maturin" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "maturin", specifier = ">=1.14.1" }]
 
 [[package]]
 name = "markdown-it-py"
